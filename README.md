@@ -94,7 +94,7 @@ Vishal Gour
 
 Portfolio & GitHub: Vishal7415
 
-Email: vishalgour@example.com
+Email: gourv6268@gmail.com
 
 ✅ Notes
 Each project is ready-to-run; just clone, install dependencies, and start the server for interactive projects.
