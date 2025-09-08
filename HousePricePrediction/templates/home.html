@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home | House Price Prediction{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>Predict House Price</h2>
+    <form method="post" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <label>Rooms</label><input type="number" name="rooms" step="1" value="3" />
+        <label>Area (sq ft)</label><input type="number" name="area" step="1" value="1200" />
+        <label>Location Score (0-10)</label><input type="number" name="loc" step="0.1" value="7.5" />
+        <button type="submit">Predict Price</button>
+    </form>
+    <div class="result">
+        {% if result %}
+            <strong>Result:</strong> {{ result }}
+        {% else %}
+            Submit the form to get a prediction.
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
