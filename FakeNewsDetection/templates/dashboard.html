@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+    <form method="post" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <label>Paste news text</label>
+        <textarea name="text" rows="5" placeholder="Breaking: Scientists discover water on Mars!"></textarea>
+        <button type="submit">Check</button>
+    </form>
+
+    <div class="result">
+        {% if result %}
+            <strong>Result:</strong> {{ result }}
+        {% else %}
+            Submit the form to get a prediction.
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
